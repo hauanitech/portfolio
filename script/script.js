@@ -41,15 +41,6 @@ document.querySelector('.btn').addEventListener('click', function () {
     }, 5000);
 });
 
-// Empêcher l'utilisation de la fonction inspecter sur la page
-
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.onkeydown = function (e) {
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-        return false;
-    }
-};
-
 // Formulaire 1 :
 
 function envoyerFormulaire(event) {
