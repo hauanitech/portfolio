@@ -1,41 +1,36 @@
-# 💼 Portfolio - Dylan Peterano
+# Portfolio – Hauani
 
-Bienvenue sur le dépôt GitHub de mon **portfolio personnel** !  
-Ce site me permet de présenter mes compétences, mes projets, ainsi que de faciliter les contacts professionnels.
+Bienvenue sur mon portfolio personnel.
 
-🔗 Site en ligne : [dylan-peterano.netlify.app](https://dylan-peterano.netlify.app)
-
----
-
-## 🧑 À propos
-
-Je m'appelle **Dylan Peterano**, développeur passionné par le **Python**, le **développement Web** et les **API backend**.  
-Ce portfolio est une vitrine de mon parcours, de mes projets et de mes ambitions.
+🔗 En ligne : [hauani.tech](www.hauani.tech)
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 🎯 Page d’accueil avec présentation claire
-- 👨‍💻 Section “À propos” avec mes compétences
-- 🛠️ Liste de projets réalisés
-- 📬 Formulaire de contact simple
-- 🌐 Design responsive (bientôt amélioré)
-- 🚀 Déployé avec **Netlify**
-
----
-
-## 🖥️ Technologies utilisées
-
-- **HTML5**
-- **CSS3**
-- **JavaScript**
+- Présentation
+- Compétences
+- Projets
+- Contact
+- Design responsive
+- Déploiement Netlify
 
 ---
 
-## 🚀 Lancer le projet en local
+## Technologies
 
-1. Clone ce dépôt :
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## Installation locale
+
 ```bash
-git clone https://github.com/ton-utilisateur/mon-portfolio.git
+git clone https://github.com/hauanitech/portfolio.git
+```
 
+---
+
+N'hésitez pas à me contacter pour plus d'informations.
