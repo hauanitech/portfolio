@@ -2,7 +2,7 @@
 
 Bienvenue sur mon portfolio personnel.
 
-🔗 En ligne : [hauani.tech](www.hauani.tech)
+🔗 En ligne : [hauani.tech](https://hauani.tech)
 
 ## Fonctionnalités
 
