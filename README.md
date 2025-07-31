@@ -4,8 +4,6 @@ Bienvenue sur mon portfolio personnel.
 
 🔗 En ligne : [hauani.tech](www.hauani.tech)
 
----
-
 ## Fonctionnalités
 
 - Présentation
@@ -15,22 +13,16 @@ Bienvenue sur mon portfolio personnel.
 - Design responsive
 - Déploiement Netlify
 
----
-
 ## Technologies
 
 - HTML5
 - CSS3
 - JavaScript
 
----
-
 ## Installation locale
 
 ```bash
 git clone https://github.com/hauanitech/portfolio.git
 ```
-
----
 
 N'hésitez pas à me contacter pour plus d'informations.
