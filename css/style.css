@@ -10,10 +10,10 @@
 }
 
 :root {
-  --bg-color: black;
-  --second-bg-color: #131313;
-  --text-color: white;
-  --main-color: #ffbfbf;
+  --bg-color: #000000;
+  --second-bg-color: #001313;
+  --text-color: #5c807d;
+  --main-color: #FBE4D8;
 }
 .pdff {
   height: 100%;
