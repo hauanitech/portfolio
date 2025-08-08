@@ -31,19 +31,19 @@
 @keyframes words {
   0%,
   20% {
-    content: "Developer";
+    content: "a Developer";
   }
   21%,
   40% {
-    content: "Junior Web Developer";
+    content: "a Web Developer";
   }
   41%,
   60% {
-    content: "Former FS Developer";
+    content: "a Software Developer";
   }
   61%,
   80% {
-    content: "Constant Learner";
+    content: "a Former Full Stack Developer";
   }
   81%,
   100% {
