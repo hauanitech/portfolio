@@ -1,23 +1,15 @@
 # Portfolio – Hauani
 
-Bienvenue sur mon portfolio personnel.
+Welcome to my personal.
 
-🔗 En ligne : [hauani.tech](https://hauani.tech)
-
-## Fonctionnalités
-
-- Présentation
-- Compétences
-- Projets
-- Contact
-- Design responsive
-- Déploiement Netlify
+🔗 Link : [www.hauani.tech](https://hauani.tech)
 
 ## Technologies
 
 - HTML5
 - CSS3
 - JavaScript
+- Web3Form API
 
 ## Installation locale
 
