@@ -365,17 +365,57 @@ span {
   width: 100%;
   height: 180px;
   overflow: hidden;
+  position: relative;
+  border-radius: 2rem 2rem 0 0;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.4s ease-in-out;
+  transition: 0.6s ease-in-out;
+  filter: brightness(0.9) contrast(1.1);
+  transform: scale(1.15);
 }
 
 .project-box:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.4);
+  filter: brightness(1) contrast(1.2);
+  animation: imageSlideshow 20s ease-in-out infinite;
+}
+
+@keyframes imageSlideshow {
+  0%, 22% {
+    transform: scale(1.4) translate(0, 0);
+  }
+  25%, 47% {
+    transform: scale(1.4) translate(-7%, -5%);
+  }
+  50%, 72% {
+    transform: scale(1.4) translate(7%, -6%);
+  }
+  75%, 97% {
+    transform: scale(1.4) translate(-5%, 4%);
+  }
+  100% {
+    transform: scale(1.4) translate(0, 0);
+  }
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(92, 128, 125, 0.3), rgba(0, 19, 19, 0.4), rgba(92, 128, 125, 0.2));
+  z-index: 1;
+  transition: 0.4s ease-in-out;
+}
+
+.project-box:hover .project-image::before {
+  background: linear-gradient(135deg, rgba(92, 128, 125, 0.15), rgba(0, 19, 19, 0.2), rgba(92, 128, 125, 0.1));
 }
 
 .project-image.wave-animation {
@@ -396,7 +436,7 @@ span {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(251, 228, 216, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(92, 128, 125, 0.6), transparent);
   animation: wave 6s linear infinite;
   z-index: 2;
 }
@@ -409,7 +449,7 @@ span {
   transform: translate(-50%, -50%);
   font-size: 2.5rem;
   font-weight: 800;
-  color: rgba(251, 228, 216, 0.15);
+  color: rgba(92, 128, 125, 0.3);
   z-index: 1;
   text-align: center;
   letter-spacing: 0.2rem;
@@ -447,7 +487,7 @@ span {
 .project-image.wave-animation.not-started::after {
   content: 'Coming Soon';
   font-size: 2.2rem;
-  color: rgba(92, 128, 125, 0.2);
+  color: rgba(92, 128, 125, 0.4);
 }
 
 .project-info {
