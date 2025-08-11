@@ -379,27 +379,9 @@ span {
 }
 
 .project-box:hover .project-image img {
-  transform: scale(1.4);
+  transform: scale(1.2);
   filter: brightness(1) contrast(1.2);
   animation: imageSlideshow 20s ease-in-out infinite;
-}
-
-@keyframes imageSlideshow {
-  0%, 22% {
-    transform: scale(1.4) translate(0, 0);
-  }
-  25%, 47% {
-    transform: scale(1.4) translate(-7%, -5%);
-  }
-  50%, 72% {
-    transform: scale(1.4) translate(7%, -6%);
-  }
-  75%, 97% {
-    transform: scale(1.4) translate(-5%, 4%);
-  }
-  100% {
-    transform: scale(1.4) translate(0, 0);
-  }
 }
 
 .project-image::before {
@@ -420,7 +402,7 @@ span {
 
 .project-image.wave-animation {
   position: relative;
-  background: linear-gradient(45deg, var(--bg-color), var(--second-bg-color), var(--text-color), var(--main-color), var(--text-color), var(--second-bg-color));
+  background: linear-gradient(45deg, var(--bg-color), var(--second-bg-color), var(--text-color), rgba(255, 255, 255, 0.075), var(--text-color), var(--second-bg-color));
   background-size: 400% 400%;
   animation: waveGradient 8s ease-in-out infinite;
 }
@@ -528,8 +510,8 @@ span {
 }
 
 .difficulty.en-cours {
-  background: #FFA500;
-  color: white;
+  background: #ffe6b8;
+  color: rgb(0, 0, 0);
 }
 
 .difficulty.pas-commence {
@@ -540,11 +522,6 @@ span {
 .project-box:hover .difficulty {
   background: var(--bg-color);
   color: var(--main-color);
-}
-
-.project-box:hover .difficulty.en-cours {
-  background: #FF8C00;
-  color: white;
 }
 
 .project-box:hover .difficulty.pas-commence {
@@ -813,7 +790,7 @@ input:focus {
   }
   .projects-container {
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 5rem;
+    margin: 0 2rem;
   }
 }
 
@@ -882,6 +859,10 @@ input:focus {
   }
 }
 @media (max-width: 895px) {
+  .project-btn {
+    background: var(--text-color);
+    color: white;
+  }
   .menuB #menu-icon {
     display: block;
   }
