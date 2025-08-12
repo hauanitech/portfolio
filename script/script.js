@@ -16,22 +16,6 @@ if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', toggleMobileMenu);
 }
 
-// Close menu when clicking on a link
-mobileNavLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        // Don't close for language switch links
-        if (!link.classList.contains('language-switch')) {
-            // Small delay to allow for navigation
-            setTimeout(() => {
-                toggleMobileMenu();
-            }, 300);
-        } else {
-            // For language switch, close immediately
-            toggleMobileMenu();
-        }
-    });
-});
-
 // Close menu when clicking outside
 mobileMenuOverlay.addEventListener('click', (e) => {
     if (e.target === mobileMenuOverlay) {
@@ -96,35 +80,39 @@ function updateActiveMobileLink() {
     });
 }
 
-// Smooth scroll functionality for mobile menu links
-function smoothScrollToSection(targetId) {
-    const targetSection = document.querySelector(targetId);
-    if (targetSection) {
-        const headerHeight = document.querySelector('.header').offsetHeight;
-        const targetPosition = targetSection.offsetTop - headerHeight;
-        
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    }
-}
-
 // Enhanced mobile menu link handling
 mobileNavLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
+        console.log('Clicked link with href:', href); // Debug
         
         // Handle internal links (sections)
         if (href.startsWith('#') && href !== '#') {
             e.preventDefault();
-            smoothScrollToSection(href);
+            
+            // Close menu first
+            toggleMobileMenu();
+            
+            // Wait for menu close animation, then scroll
             setTimeout(() => {
-                toggleMobileMenu();
-                // Update URL without jumping
-                history.replaceState(null, null, href);
-                updateActiveMobileLink();
-            }, 300);
+                const targetSection = document.querySelector(href);
+                console.log('Target section found:', targetSection); // Debug
+                
+                if (targetSection) {
+                    const headerHeight = 80; // Fixed height instead of calculated
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    console.log('Scrolling to position:', targetPosition); // Debug
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL
+                    history.replaceState(null, null, href);
+                    updateActiveMobileLink();
+                }
+            }, 500); // Increased delay
         }
         // Handle language switch and external links
         else if (link.classList.contains('language-switch') || href.includes('.html')) {
@@ -133,12 +121,12 @@ mobileNavLinks.forEach(link => {
         // Handle home link
         else if (href === '#') {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            toggleMobileMenu();
             setTimeout(() => {
-                toggleMobileMenu();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
                 history.replaceState(null, null, '/');
                 updateActiveMobileLink();
-            }, 300);
+            }, 500);
         }
     });
 });
