@@ -16,13 +16,10 @@
     <header class="header">
       <a href="#" class="logo">Hauani <span>PETERANO</span></a>
 
-      <div class="menuB">
-        <box-icon
-          name="menu"
-          id="menu-icon"
-          color="#ffffff"
-          size="40px"
-        ></box-icon>
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </div>
 
       <nav class="navbar">
@@ -34,6 +31,22 @@
         <a href="#contact">Contacts</a>
         <a href="index.html">Anglais</a>
       </nav>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <nav class="mobile-navbar">
+          <a href="#" class="mobile-nav-link active" data-text="Accueil">Accueil</a>
+          <a href="#education" class="mobile-nav-link" data-text="Formation">Formation</a>
+          <a href="#services" class="mobile-nav-link" data-text="Services">Services</a>
+          <a href="#projects" class="mobile-nav-link" data-text="Projets">Projets</a>
+          <a href="#testimonials" class="mobile-nav-link" data-text="Témoignages">Témoignages</a>
+          <a href="#contact" class="mobile-nav-link" data-text="Contact">Contact</a>
+          <a href="index.html" class="mobile-nav-link language-switch" data-text="English">🇺🇸 English</a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <p>&copy; 2025 Hauani Peterano</p>
+        </div>
+      </div>
     </header>
 
     <!-- Section Home -->

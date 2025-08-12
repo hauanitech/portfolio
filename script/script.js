@@ -1,28 +1,162 @@
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let sections = document.querySelector('.section');
-let navLinks = document.querySelector('header nav a');
+// Modern Mobile Menu Implementation
+let mobileMenuToggle = document.querySelector('#mobile-menu-toggle');
+let mobileMenuOverlay = document.querySelector('#mobile-menu-overlay');
+let mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+let body = document.body;
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute;
-
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a [href*=' + id + ']').classList.add('active')
-            })
-        }
-    })
+// Toggle mobile menu
+function toggleMobileMenu() {
+    mobileMenuToggle.classList.toggle('active');
+    mobileMenuOverlay.classList.toggle('active');
+    body.classList.toggle('menu-open');
 }
 
+// Event listeners
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+}
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+// Close menu when clicking on a link
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Don't close for language switch links
+        if (!link.classList.contains('language-switch')) {
+            // Small delay to allow for navigation
+            setTimeout(() => {
+                toggleMobileMenu();
+            }, 300);
+        } else {
+            // For language switch, close immediately
+            toggleMobileMenu();
+        }
+    });
+});
+
+// Close menu when clicking outside
+mobileMenuOverlay.addEventListener('click', (e) => {
+    if (e.target === mobileMenuOverlay) {
+        toggleMobileMenu();
+    }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+        toggleMobileMenu();
+    }
+});
+
+// Add smooth transitions for better UX
+function addBlurTransitions() {
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Smooth transitions only for content sections */
+        section, main, footer {
+            transition: filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* Force mobile menu elements to stay sharp */
+        .mobile-menu-overlay,
+        .mobile-menu-overlay *,
+        .mobile-menu-toggle,
+        .mobile-menu-toggle *,
+        .mobile-navbar,
+        .mobile-navbar *,
+        .hamburger-line {
+            filter: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            -webkit-filter: none !important;
+        }
+        
+        /* Reset filters when menu is closed */
+        body:not(.menu-open) section,
+        body:not(.menu-open) main,
+        body:not(.menu-open) footer {
+            filter: none;
+        }
+    `;
+    document.head.appendChild(style);
+}
+addBlurTransitions();
+
+// Update active states for mobile menu
+function updateActiveMobileLink() {
+    const currentHash = window.location.hash || '#';
+    const currentPath = window.location.pathname;
+    
+    mobileNavLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        if (link.getAttribute('href') === currentHash || 
+            (currentHash === '#' && link.getAttribute('href') === '#') ||
+            (link.getAttribute('href').includes('index') && currentPath.includes(link.getAttribute('href')))) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Smooth scroll functionality for mobile menu links
+function smoothScrollToSection(targetId) {
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const targetPosition = targetSection.offsetTop - headerHeight;
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Enhanced mobile menu link handling
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        
+        // Handle internal links (sections)
+        if (href.startsWith('#') && href !== '#') {
+            e.preventDefault();
+            smoothScrollToSection(href);
+            setTimeout(() => {
+                toggleMobileMenu();
+                // Update URL without jumping
+                history.replaceState(null, null, href);
+                updateActiveMobileLink();
+            }, 300);
+        }
+        // Handle language switch and external links
+        else if (link.classList.contains('language-switch') || href.includes('.html')) {
+            toggleMobileMenu();
+        }
+        // Handle home link
+        else if (href === '#') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+                toggleMobileMenu();
+                history.replaceState(null, null, '/');
+                updateActiveMobileLink();
+            }, 300);
+        }
+    });
+});
+
+// Update active states on scroll and hash change
+window.addEventListener('hashchange', updateActiveMobileLink);
+window.addEventListener('load', updateActiveMobileLink);
+window.addEventListener('scroll', updateActiveMobileLink);
+
+// Legacy support for existing menu (if any old elements exist)
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    }
 }
 
 setInterval(function () {
