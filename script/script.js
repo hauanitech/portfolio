@@ -248,10 +248,13 @@ function envoyerFormulaire(event) {
 
 // Scroll animations for sections
 function initScrollAnimations() {
+    // Set to track animated elements
+    const animatedElements = new Set();
+    
     // Get all sections to animate
     const animatedSections = document.querySelectorAll('section');
     
-    // Create intersection observer
+    // Create intersection observer for sections
     const observerOptions = {
         threshold: 0.1, // Trigger when 10% of the section is visible
         rootMargin: '0px 0px -50px 0px' // Start animation 50px before the section enters viewport
@@ -259,14 +262,12 @@ function initScrollAnimations() {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Section is entering viewport - fade in
+            if (entry.isIntersecting && !animatedElements.has(entry.target)) {
+                // Section is entering viewport for the first time - fade in
                 entry.target.classList.add('animate-fade-in');
-                entry.target.classList.remove('animate-fade-out');
-            } else {
-                // Section is leaving viewport - fade out
-                entry.target.classList.add('animate-fade-out');
-                entry.target.classList.remove('animate-fade-in');
+                animatedElements.add(entry.target);
+                // Stop observing this element since we only want to animate once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -284,10 +285,10 @@ function initScrollAnimations() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !animatedElements.has(entry.target)) {
                 entry.target.classList.add('animate-slide-in');
-            } else {
-                entry.target.classList.remove('animate-slide-in');
+                animatedElements.add(entry.target);
+                timelineObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
@@ -301,12 +302,12 @@ function initScrollAnimations() {
     const serviceBoxes = document.querySelectorAll('.service-box');
     const serviceObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !animatedElements.has(entry.target)) {
                 setTimeout(() => {
                     entry.target.classList.add('animate-service-in');
                 }, index * 100); // Stagger animation
-            } else {
-                entry.target.classList.remove('animate-service-in');
+                animatedElements.add(entry.target);
+                serviceObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.3 });
@@ -320,12 +321,12 @@ function initScrollAnimations() {
     const projectBoxes = document.querySelectorAll('.project-box');
     const projectObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !animatedElements.has(entry.target)) {
                 setTimeout(() => {
                     entry.target.classList.add('animate-project-in');
                 }, index * 150); // Stagger animation
-            } else {
-                entry.target.classList.remove('animate-project-in');
+                animatedElements.add(entry.target);
+                projectObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
@@ -339,12 +340,12 @@ function initScrollAnimations() {
     const testimonialItems = document.querySelectorAll('.testimonial-item');
     const testimonialObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !animatedElements.has(entry.target)) {
                 setTimeout(() => {
                     entry.target.classList.add('animate-testimonial-in');
                 }, index * 200); // Stagger animation
-            } else {
-                entry.target.classList.remove('animate-testimonial-in');
+                animatedElements.add(entry.target);
+                testimonialObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.3 });

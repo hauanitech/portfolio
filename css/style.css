@@ -1276,11 +1276,6 @@ input:focus {
   transform: translateY(0);
 }
 
-.scroll-animate.animate-fade-out {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
 /* Timeline item animations */
 .timeline-animate {
   opacity: 0;
