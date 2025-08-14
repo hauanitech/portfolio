@@ -245,3 +245,115 @@ function envoyerFormulaire(event) {
             console.error('Erreur lors de la soumission du formulaire:', error);
         });
 }
+
+// Scroll animations for sections
+function initScrollAnimations() {
+    // Get all sections to animate
+    const animatedSections = document.querySelectorAll('section');
+    
+    // Create intersection observer
+    const observerOptions = {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+        rootMargin: '0px 0px -50px 0px' // Start animation 50px before the section enters viewport
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Section is entering viewport - fade in
+                entry.target.classList.add('animate-fade-in');
+                entry.target.classList.remove('animate-fade-out');
+            } else {
+                // Section is leaving viewport - fade out
+                entry.target.classList.add('animate-fade-out');
+                entry.target.classList.remove('animate-fade-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections except home (which should always be visible initially)
+    animatedSections.forEach(section => {
+        // Add initial state classes
+        if (section.id !== 'home') {
+            section.classList.add('scroll-animate');
+            observer.observe(section);
+        }
+    });
+
+    // Special handling for timeline items in education section
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-slide-in');
+            } else {
+                entry.target.classList.remove('animate-slide-in');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    timelineItems.forEach(item => {
+        item.classList.add('timeline-animate');
+        timelineObserver.observe(item);
+    });
+
+    // Special handling for service boxes
+    const serviceBoxes = document.querySelectorAll('.service-box');
+    const serviceObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate-service-in');
+                }, index * 100); // Stagger animation
+            } else {
+                entry.target.classList.remove('animate-service-in');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    serviceBoxes.forEach(box => {
+        box.classList.add('service-animate');
+        serviceObserver.observe(box);
+    });
+
+    // Special handling for project boxes
+    const projectBoxes = document.querySelectorAll('.project-box');
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate-project-in');
+                }, index * 150); // Stagger animation
+            } else {
+                entry.target.classList.remove('animate-project-in');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    projectBoxes.forEach(box => {
+        box.classList.add('project-animate');
+        projectObserver.observe(box);
+    });
+
+    // Special handling for testimonial items
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const testimonialObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate-testimonial-in');
+                }, index * 200); // Stagger animation
+            } else {
+                entry.target.classList.remove('animate-testimonial-in');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    testimonialItems.forEach(item => {
+        item.classList.add('testimonial-animate');
+        testimonialObserver.observe(item);
+    });
+}
+
+// Initialize scroll animations when page loads
+document.addEventListener('DOMContentLoaded', initScrollAnimations);
