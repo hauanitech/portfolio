@@ -54,7 +54,7 @@
     <section id="home">
       <div class="home-content">
         <h1>Hello, it's <span>Hauani</span></h1>
-        <h3 class="text-animation">I am <span></span></h3>
+        <h3>I am <span class="text-animation"><span></span></span></h3>
         <p>
           A young developer, creative, imaginative, capable of pushing his
           limits and those of his clients. Adaptability is one of the qualities
@@ -216,118 +216,368 @@
     <!-- Section Projects -->
 
     <section class="projects" id="projects">
-      <h2 class="heading">My <span>Projects</span></h2>
+      <div class="projects-intro">
+        <h2 class="heading">My <span>Projects</span></h2>
+        <p class="projects-subtitle">Building digital experiences that make a difference</p>
+        <div class="projects-stats">
+          <div class="stat-item">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Passion</span>
+          </div>
+        </div>
+      </div>
 
       <div class="projects-container">
-        <div class="project-box">
+        <div class="project-card featured">
           <div class="project-image">
             <img src="images/projects/portfolio.png" alt="Portfolio Project" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h4>Portfolio</h4>
-              <span class="difficulty">Intermediate</span>
+            <div class="project-overlay">
+              <div class="tech-stack">
+                <span class="tech-item">HTML</span>
+                <span class="tech-item">CSS</span>
+                <span class="tech-item">JavaScript</span>
+              </div>
             </div>
-            <p>
-              Modern portfolio website built with HTML, CSS and JavaScript. 
-              Responsive design with CSS animations and intuitive user interface. 
-              Showcases skills, projects and contact information.
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-title">
+                <h3>Portfolio Website</h3>
+                <span class="project-badge featured-badge">Featured</span>
+              </div>
+              <div class="project-difficulty intermediate">
+                <box-icon name='code-alt' color='var(--main-color)'></box-icon>
+                <span>Intermediate</span>
+              </div>
+            </div>
+            <p class="project-description">
+              A modern, responsive portfolio showcasing my skills and projects. 
+              Built with clean code, smooth animations, and an intuitive user experience. 
+              Features light mode design with elegant typography and interactive elements.
             </p>
-            <a href="https://github.com/hauanitech/portfolio" target="_blank" class="project-btn">
-              <box-icon name="github" type="logo" color="#ffffff"></box-icon>
-              View Project
-            </a>
+            <div class="project-features">
+              <div class="feature-item">
+                <box-icon name='mobile-alt' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Responsive Design</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='paint' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Custom Animations</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='rocket' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Fast Loading</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/hauanitech/portfolio" target="_blank" class="project-btn primary">
+                <box-icon name="github" type="logo" size='sm'></box-icon>
+                <span>View Code</span>
+              </a>
+              <a href="#" class="project-btn secondary">
+                <box-icon name='link-external' size='sm'></box-icon>
+                <span>Live Demo</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-box">
+        <div class="project-card">
           <div class="project-image">
             <img src="images/projects/to-do.png" alt="To-DO List web App" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h4>To-DO List web App</h4>
-              <span class="difficulty">Beginner</span>
+            <div class="project-overlay">
+              <div class="tech-stack">
+                <span class="tech-item">HTML</span>
+                <span class="tech-item">CSS</span>
+                <span class="tech-item">JS</span>
+              </div>
             </div>
-            <p>
-              Task management web application with intuitive user interface. 
-              Features for adding, deleting and marking tasks as completed. 
-              Local data storage for offline usage.
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-title">
+                <h3>Todo List App</h3>
+                <span class="project-badge completed-badge">Completed</span>
+              </div>
+              <div class="project-difficulty beginner">
+                <box-icon name='code' color='var(--main-color)'></box-icon>
+                <span>Beginner</span>
+              </div>
+            </div>
+            <p class="project-description">
+              An intuitive task management application with a clean interface. 
+              Features include adding, deleting, and marking tasks as complete 
+              with local storage for persistent data.
             </p>
-            <a href="https://github.com/hauanitech/to-do" target="_blank" class="project-btn">
-              <box-icon name="github" type="logo" color="#ffffff"></box-icon>
-              View Project
-            </a>
+            <div class="project-features">
+              <div class="feature-item">
+                <box-icon name='check-circle' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Task Management</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='data' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Local Storage</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='user-check' size='xs' color='var(--accent-color)'></box-icon>
+                <span>User Friendly</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/hauanitech/to-do" target="_blank" class="project-btn primary">
+                <box-icon name="github" type="logo" size='sm'></box-icon>
+                <span>View Code</span>
+              </a>
+              <a href="#" class="project-btn secondary">
+                <box-icon name='link-external' size='sm'></box-icon>
+                <span>Live Demo</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-box">
-          <div class="project-image wave-animation not-started">
-            <img src="images/main.jpg" alt="Dev-Log Creator" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h4>Dev-Log Creator</h4>
-              <span class="difficulty pas-commence">Not Started Yet</span>
+        <div class="project-card">
+          <div class="project-image in-progress">
+            <div class="in-progress-content">
+              <box-icon name='code-curly' size='lg' color='var(--main-color)'></box-icon>
+              <h4>In Development</h4>
             </div>
-            <p>
-              Development journal creation and management tool for developers. 
-              Interface for documenting project progress, resolved bugs 
-              and new features with tagging and search system.
+            <div class="progress-ring">
+              <svg>
+                <circle cx="50" cy="50" r="45"></circle>
+                <circle cx="50" cy="50" r="45" class="progress" style="stroke-dashoffset: 170;"></circle>
+              </svg>
+              <span class="progress-text">60%</span>
+            </div>
+            <div class="tech-stack-overlay">
+              <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">ML</span>
+                <span class="tech-item">Web</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-title">
+                <h3>Scam-buster</h3>
+                <span class="project-badge progress-badge">In Progress</span>
+              </div>
+              <div class="project-difficulty advanced">
+                <box-icon name='code-curly' color='var(--main-color)'></box-icon>
+                <span>Advanced</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Online scam detection and prevention application with AI-powered analysis. 
+              Features suspicious URL detection, phishing prevention, and a community 
+              database for reporting fraudulent websites.
             </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <box-icon name='shield-check' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Security Focus</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='brain' size='xs' color='var(--accent-color)'></box-icon>
+                <span>AI Detection</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='group' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Community Driven</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="project-btn progress">
+                <box-icon name='time' size='sm'></box-icon>
+                <span>In Development</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-box">
-          <div class="project-image wave-animation">
-            <img src="images/main.jpg" alt="Scam-buster" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h4>Scam-buster</h4>
-              <span class="difficulty en-cours">In Progress</span>
+        <div class="project-card">
+          <div class="project-image in-progress">
+            <div class="in-progress-content">
+              <box-icon name='server' size='lg' color='var(--main-color)'></box-icon>
+              <h4>In Development</h4>
             </div>
-            <p>
-              Online scam detection and prevention application. 
-              Suspicious URL analysis system, phishing detection 
-              and community database for reporting fraudulent websites.
+            <div class="progress-ring">
+              <svg>
+                <circle cx="50" cy="50" r="45"></circle>
+                <circle cx="50" cy="50" r="45" class="progress" style="stroke-dashoffset: 140;"></circle>
+              </svg>
+              <span class="progress-text">75%</span>
+            </div>
+            <div class="tech-stack-overlay">
+              <div class="tech-stack">
+                <span class="tech-item">FastAPI</span>
+                <span class="tech-item">Python</span>
+                <span class="tech-item">React</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-title">
+                <h3>FastAPI Todo</h3>
+                <span class="project-badge progress-badge">In Progress</span>
+              </div>
+              <div class="project-difficulty intermediate">
+                <box-icon name='code-alt' color='var(--main-color)'></box-icon>
+                <span>Intermediate</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Full-stack task management application using FastAPI backend with React frontend. 
+              Features user authentication, real-time updates, and a modern responsive interface 
+              for optimal user experience.
             </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <box-icon name='server' size='xs' color='var(--accent-color)'></box-icon>
+                <span>FastAPI Backend</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='lock-alt' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Authentication</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='refresh' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Real-time Updates</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="project-btn progress">
+                <box-icon name='time' size='sm'></box-icon>
+                <span>In Development</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-box">
-          <div class="project-image wave-animation">
-            <img src="images/main.jpg" alt="FastAPI To-Do Website" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h4>FastAPI To-Do Website</h4>
-              <span class="difficulty en-cours">In Progress</span>
+        <div class="project-card upcoming">
+          <div class="project-image coming-soon">
+            <div class="coming-soon-content">
+              <box-icon name='mobile' size='lg' color='var(--accent-color)'></box-icon>
+              <h4>Coming Soon</h4>
             </div>
-            <p>
-              Task management website using FastAPI for backend. 
-              Modern API with authentication, user management 
-              and responsive web interface for optimal user experience.
+            <div class="progress-ring">
+              <svg>
+                <circle cx="50" cy="50" r="45"></circle>
+                <circle cx="50" cy="50" r="45" class="progress"></circle>
+              </svg>
+              <span class="progress-text">Planning</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-title">
+                <h3>Note Taking App</h3>
+                <span class="project-badge upcoming-badge">Upcoming</span>
+              </div>
+              <div class="project-difficulty intermediate">
+                <box-icon name='code-alt' color='var(--main-color)'></box-icon>
+                <span>Intermediate</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Cross-platform mobile note-taking application with cloud synchronization. 
+              Features rich text editing, image support, custom tags, and seamless 
+              sync across all devices.
             </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <box-icon name='cloud' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Cloud Sync</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='edit' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Rich Text</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='devices' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Cross Platform</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="project-btn disabled">
+                <box-icon name='calendar' size='sm'></box-icon>
+                <span>In Planning</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-box">
-          <div class="project-image wave-animation not-started">
-            <img src="images/main.jpg" alt="Note Taking Mobile App" />
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <h4>Note Taking Mobile App</h4>
-              <span class="difficulty pas-commence">Not Started Yet</span>
+        <div class="project-card upcoming">
+          <div class="project-image coming-soon">
+            <div class="coming-soon-content">
+              <box-icon name='book-bookmark' size='lg' color='var(--accent-color)'></box-icon>
+              <h4>Coming Soon</h4>
             </div>
-            <p>
-              Mobile note-taking application with cloud synchronization. 
-              Create, edit and organize notes features 
-              with support for rich text, images and custom tags.
+            <div class="progress-ring">
+              <svg>
+                <circle cx="50" cy="50" r="45"></circle>
+                <circle cx="50" cy="50" r="45" class="progress"></circle>
+              </svg>
+              <span class="progress-text">Planning</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-title">
+                <h3>Dev-Log Creator</h3>
+                <span class="project-badge upcoming-badge">Upcoming</span>
+              </div>
+              <div class="project-difficulty advanced">
+                <box-icon name='code-curly' color='var(--main-color)'></box-icon>
+                <span>Advanced</span>
+              </div>
+            </div>
+            <p class="project-description">
+              A comprehensive development journal tool for tracking project progress, 
+              documenting bugs, and managing feature development with advanced 
+              tagging and search capabilities.
             </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <box-icon name='book-bookmark' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Progress Tracking</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='search' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Smart Search</span>
+              </div>
+              <div class="feature-item">
+                <box-icon name='tag' size='xs' color='var(--accent-color)'></box-icon>
+                <span>Tagging System</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="project-btn disabled">
+                <box-icon name='calendar' size='sm'></box-icon>
+                <span>In Planning</span>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="projects-footer">
+        <p>Want to see more of my work?</p>
+        <a href="https://github.com/hauanitech" target="_blank" class="view-all-btn">
+          <box-icon name="github" type="logo"></box-icon>
+          <span>View All Projects</span>
+          <box-icon name='right-arrow-alt'></box-icon>
+        </a>
       </div>
     </section>
 

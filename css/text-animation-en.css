@@ -2,76 +2,79 @@
   font-size: 34px;
   font-weight: 600;
   min-width: 280px;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 8px;
 }
+
 .text-animation span {
-  position: relative;
-  width: 100%;
-  white-space: nowrap;
-}
-.text-animation span::before {
-  content: "Web Developer";
   color: var(--main-color);
-  animation: words 20s infinite;
 }
-.text-animation span::after {
-  content: "";
-  background-color: var(--bg-color);
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid var(--bg-color);
-  right: -8px;
-  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+
+.text-animation span::before {
+  content: "a Developer";
+  animation: changeText 15s infinite;
 }
-@keyframes cursor {
-  to {
-    border-left: 2px solid var(--main-color);
-  }
-}
-@keyframes words {
-  0%,
-  20% {
+
+@keyframes changeText {
+  0%, 15% {
     content: "a Developer";
+    opacity: 1;
+    transform: translateY(0);
   }
-  21%,
-  40% {
+  
+  17% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  20%, 35% {
     content: "a Web Developer";
+    opacity: 1;
+    transform: translateY(0);
   }
-  41%,
-  60% {
+  
+  37% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  40%, 55% {
     content: "a Software Developer";
+    opacity: 1;
+    transform: translateY(0);
   }
-  61%,
-  80% {
-    content: "a Former Full Stack Developer";
+  
+  57% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  81%,
-  100% {
+  
+  60%, 75% {
+    content: "a Full Stack Developer";
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  77% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  80%, 95% {
     content: "The one you need";
+    opacity: 1;
+    transform: translateY(0);
   }
-}
-@keyframes typing {
-  10%,
-  15%,
-  30%,
-  35%,
-  50%,
-  55%,
-  70%,
-  75%,
-  90%,
-  95% {
-    width: 0;
+  
+  97% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  5%,
-  20%,
-  25%,
-  40%,
-  45%,
-  60%,
-  65%,
-  80%,
-  85% {
-    width: calc(100% + 8px);
+  
+  100% {
+    content: "a Developer";
+    opacity: 1;
+    transform: translateY(0);
   }
 }
