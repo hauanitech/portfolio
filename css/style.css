@@ -26,7 +26,7 @@
   height: 100%;
 }
 html {
-  font-size: 60%;
+  font-size: 65%;
   overflow-x: hidden;
 }
 body {
@@ -40,7 +40,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 12% 2rem;
+  padding: 2rem 10% 2rem;
   background: rgba(255, 247, 230, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -285,14 +285,14 @@ body {
 
 section {
   min-height: 100vh;
-  padding: 8rem 12% 8rem;
+  padding: 6rem 10% 6rem;
 }
 
 #home {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8rem;
+  gap: 6rem;
   min-height: 100vh;
 }
 .home-content {
@@ -552,21 +552,21 @@ span {
 .services {
   background: var(--bg-color);
   min-height: 0;
-  margin-bottom: 20rem;
-  padding: 8rem 9% 5rem;
+  margin-bottom: 8rem;
+  padding: 6rem 9% 4rem;
 }
 
 .services h2 {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   color: var(--main-color);
   text-align: center;
 }
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   align-items: stretch;
-  gap: 3rem;
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -667,13 +667,13 @@ span {
 
 .projects-intro {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .projects-subtitle {
   font-size: 1.8rem;
   color: var(--accent-color);
-  margin: 1rem 0 3rem;
+  margin: 1rem 0 2rem;
   font-weight: 300;
   letter-spacing: 0.5px;
 }
@@ -681,8 +681,8 @@ span {
 .projects-stats {
   display: flex;
   justify-content: center;
-  gap: 4rem;
-  margin-top: 3rem;
+  gap: 3rem;
+  margin-top: 2rem;
 }
 
 .stat-item {
@@ -712,8 +712,8 @@ span {
 .projects-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-bottom: 5rem;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .project-card {
@@ -1377,6 +1377,9 @@ span {
 
 .testimonials {
   background: var(--second-bg-color);
+  min-height: 0;
+  height: 100%;
+  padding-bottom: 20rem;
 }
 
 .testimonials-box {
@@ -1621,16 +1624,16 @@ input:focus {
 
 @media (max-width: 1285px) {
   html {
-    font-size: 55%;
+    font-size: 62%;
   }
   
   .services {
-    padding: 6rem 7% 4rem;
+    padding: 5rem 7% 3rem;
   }
   
   .services-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
     max-width: 1000px;
   }
   
@@ -1646,6 +1649,10 @@ input:focus {
     font-size: 1.4rem;
   }
   
+  section {
+    padding: 5rem 8% 5rem;
+  }
+  
   .projects-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -1654,11 +1661,29 @@ input:focus {
 
 /* Large screens - Force 3 columns */
 @media (min-width: 1201px) {
+  html {
+    font-size: 68%;
+  }
+  
   .projects-container {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    gap: 2rem;
+  }
+  
+  .services-container {
+    max-width: 1000px;
+    gap: 2rem;
+  }
+  
+  section {
+    padding: 5rem 9% 5rem;
+  }
+  
+  #home {
+    gap: 5rem;
   }
 }
 
