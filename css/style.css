@@ -1962,6 +1962,11 @@ input:focus {
     background-color: var(--main-color);
     margin: 2rem 2rem 2rem 0;
   }
+
+  .footer .social box-icon {
+    color: #ffffff !important;
+    filter: brightness(0) invert(1);
+  }
 }
 
 /* Ultra-small screens */

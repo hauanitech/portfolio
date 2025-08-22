@@ -1,10 +1,10 @@
 .text-animation {
-  font-size: 34px;
+  font-size: 3.4rem;
   font-weight: 600;
-  min-width: 320px;
+  min-width: 32rem;
   display: inline-block;
   vertical-align: baseline;
-  margin-left: 8px;
+  margin-left: 0.8rem;
 }
 
 .text-animation span {
@@ -76,5 +76,37 @@
     content: "un développeur";
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1285px) {
+  .text-animation {
+    font-size: 3rem;
+    min-width: 28rem;
+  }
+}
+
+@media (max-width: 895px) {
+  .text-animation {
+    font-size: 2.6rem;
+    min-width: 24rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-animation {
+    font-size: 2.2rem;
+    min-width: 20rem;
+    margin-left: 0.3rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .text-animation {
+    font-size: 1.9rem;
+    min-width: 18rem;
+    margin-left: 0.2rem;
   }
 }
