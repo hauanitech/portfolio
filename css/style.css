@@ -1581,6 +1581,32 @@ span {
   color: #102E4A !important;
 }
 
+[data-theme="dark"] .view-all-btn {
+  color: #102E4A !important;
+}
+
+[data-theme="dark"] .view-all-btn span {
+  color: #102E4A !important;
+}
+
+[data-theme="dark"] .view-all-btn box-icon {
+  color: #102E4A !important;
+  filter: none;
+}
+
+[data-theme="dark"] .view-all-btn:hover {
+  color: #102E4A !important;
+}
+
+[data-theme="dark"] .view-all-btn:hover span {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .view-all-btn:hover box-icon {
+  color: #102E4A !important;
+  filter: none;
+}
+
 .testimonials {
   background: var(--second-bg-color);
   min-height: 0;
