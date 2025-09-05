@@ -802,65 +802,99 @@
     <section class="contact" id="contact">
       <h2 class="heading">Contactez-<span>Moi</span></h2>
 
-      <form
-        id="Portfolio Form"
-        action="https://api.web3forms.com/submit"
-        method="POST"
-        onsubmit="envoyerFormulaire(event)"
-      >
-        <div class="input-group">
-          <input
-            type="hidden"
-            name="access_key"
-            value="f9eda6be-6c67-457f-8bbc-8e21f705a41e"
-          />
+      <!-- Rate Limit Warning -->
+      <div class="rate-limit-warning" id="rateLimitWarning">
+        <box-icon name='time' color='#d63031'></box-icon>
+        <span>Veuillez attendre <span class="rate-limit-timer" id="rateLimitTimer">0</span> secondes avant d'envoyer un autre message.</span>
+      </div>
 
+      <form id="Portfolio-Form" action="https://api.web3forms.com/submit" method="POST">
+        <div class="input-group">
+          <!-- Hidden fields -->
+          <input type="hidden" name="access_key" value="f9eda6be-6c67-457f-8bbc-8e21f705a41e" />
+          <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off" />
+
+          <!-- Name and Email -->
           <div class="input-box">
-            <input
-              name="Nom-Prénom"
-              type="text"
-              placeholder="Nom Prénom"
-              required
-            />
-            <input name="email" type="email" placeholder="Email" required />
+            <div class="field-container">
+              <input name="Nom-Prénom" type="text" placeholder="Nom Prénom" required id="nameInput" />
+              <div class="field-error" id="nameError"></div>
+            </div>
+            
+            <div class="field-container">
+              <input name="email" type="email" placeholder="Email" required id="emailInput" />
+              <div class="field-error" id="emailError"></div>
+            </div>
           </div>
-          <div class="input-box">
-            <input
-              id="phone"
-              name="Numéro De Téléphone"
-              type="tel"
-              inputmode="numeric"
-              maxlength="14"
-              placeholder="Numéro de téléphone"
-              required
-            />
-            <small id="phone-error" class="error-message"
-              >Numéro invalide</small
-            >
+
+          <!-- Phone Number with Country Selector -->
+          <div class="phone-input-group">
+            <div class="country-selector">
+              <div class="country-dropdown" id="countryDropdown">
+                <span class="country-flag" id="selectedFlag">🇫🇷</span>
+                <span class="country-code" id="selectedCode">+33</span>
+                <span class="country-name" id="selectedName">France</span>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              
+              <div class="country-list" id="countryList">
+                <!-- Countries will be populated by JavaScript -->
+              </div>
+            </div>
+
+            <div class="field-container phone-number-input">
+              <input 
+                id="phone" 
+                name="Numéro De Téléphone" 
+                type="tel" 
+                placeholder="01 23 45 67 89"
+                required 
+              />
+              <div class="field-error" id="phoneError"></div>
+            </div>
           </div>
         </div>
 
         <div class="input-group-2">
-          <input
-            name="sujet"
-            type="text"
-            class="ipt"
-            placeholder="Objet"
-            autocomplete="off"
-            required
-          />
-          <textarea
-            name="message"
-            cols="10"
-            rows="10"
-            placeholder="Votre Message"
-            autocomplete="off"
-            required
-          ></textarea>
-          <input name="boutton" type="submit" value="Envoyez" class="btn" />
+          <!-- Subject -->
+          <div class="field-container">
+            <input name="sujet" type="text" class="ipt" placeholder="Objet" autocomplete="off" required id="subjectInput" />
+            <div class="field-error" id="subjectError"></div>
+          </div>
+
+          <!-- Message -->
+          <div class="field-container">
+            <textarea name="message" cols="10" rows="10" placeholder="Votre Message" autocomplete="off" required id="messageInput"></textarea>
+            <div class="char-counter">
+              <span class="char-count" id="charCount">0</span>
+              <span class="char-limit">/ 1000 caractères</span>
+            </div>
+            <div class="field-error" id="messageError"></div>
+          </div>
+
+          <!-- Captcha -->
+          <div class="captcha-container">
+            <span class="captcha-question" id="captchaQuestion">5 + 3 = ?</span>
+            <input type="number" class="captcha-input" id="captchaInput" placeholder="?" required />
+            <button type="button" class="captcha-refresh" id="captchaRefresh">
+              <box-icon name='refresh' color='white'></box-icon>
+            </button>
+          </div>
+
+          <input name="boutton" type="submit" value="Envoyez" class="btn" id="submitBtn" />
         </div>
       </form>
     </section>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+      <div class="success-modal-content">
+        <div class="success-icon">✅</div>
+        <h3 class="success-title">Message envoyé !</h3>
+        <p class="success-message">Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.</p>
+        <button class="success-close" id="successClose">Fermer</button>
+      </div>
+    </div>
 
     <!-- Footer -->
 
@@ -901,5 +935,9 @@
     </footer>
 
     <script src="script/script.js?v=2.4.4"></script>
+    <script src="script/form-validator.js"></script>
+    <script src="script/country-codes.js"></script>
+    <script src="script/profanity-filter.js"></script>
+    <script src="script/contact-form.js"></script>
   </body>
 </html>
