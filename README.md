@@ -11,10 +11,8 @@ Welcome to my personal.
 - JavaScript
 - Web3Form API
 
-## Installation locale
+## Local Installation
 
 ```bash
 git clone https://github.com/hauanitech/portfolio.git
 ```
-
-N'hésitez pas à me contacter pour plus d'informations.
