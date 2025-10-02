@@ -28,8 +28,8 @@
 
       <div class="header-controls">
         <div class="theme-toggle" id="theme-toggle">
-          <box-icon name='sun' class="theme-icon sun-icon"></box-icon>
-          <box-icon name='moon' class="theme-icon moon-icon"></box-icon>
+          <box-icon name="sun" class="theme-icon sun-icon"></box-icon>
+          <box-icon name="moon" class="theme-icon moon-icon"></box-icon>
         </div>
 
         <div class="mobile-menu-toggle" id="mobile-menu-toggle">
@@ -63,14 +63,12 @@
           <a href="#contact" class="mobile-nav-link" data-text="Contact"
             >Contact</a
           >
-          <a
-            href="index.html"
-            class="mobile-nav-link language-switch"
+          <a href="index.html" class="mobile-nav-link language-switch"
             >🇺🇸 English</a
           >
           <div class="mobile-theme-toggle" id="mobile-theme-toggle">
-            <box-icon name='sun' class="theme-icon sun-icon"></box-icon>
-            <box-icon name='moon' class="theme-icon moon-icon"></box-icon>
+            <box-icon name="sun" class="theme-icon sun-icon"></box-icon>
+            <box-icon name="moon" class="theme-icon moon-icon"></box-icon>
           </div>
         </nav>
         <div class="mobile-menu-footer">
@@ -396,14 +394,18 @@
             </div>
             <div class="project-actions">
               <a
-                href="https://github.com/hauanitech/to-do"
+                href="https://github.com/hauanitech/web-to-do"
                 target="_blank"
                 class="project-btn primary"
               >
                 <box-icon name="github" type="logo" size="sm"></box-icon>
                 <span>Voir le Code</span>
               </a>
-              <a href="#" class="project-btn secondary">
+              <a
+                href="https://hauanitech.github.io/web-to-do/"
+                target="_blank"
+                class="project-btn secondary"
+              >
                 <box-icon name="link-external" size="sm"></box-icon>
                 <span>Démo en Direct</span>
               </a>
@@ -412,29 +414,12 @@
         </div>
 
         <div class="project-card">
-          <div class="project-image in-progress">
-            <div class="in-progress-content">
-              <box-icon
-                name="code-curly"
-                size="lg"
-                color="var(--main-color)"
-              ></box-icon>
-              <h4>En Développement</h4>
-            </div>
-            <div class="progress-ring">
-              <svg>
-                <circle cx="50" cy="50" r="45"></circle>
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  class="progress"
-                  style="stroke-dashoffset: 170"
-                ></circle>
-              </svg>
-              <span class="progress-text">60%</span>
-            </div>
-            <div class="tech-stack-overlay">
+          <div class="project-image">
+            <img
+              src="images/projects/scam-buster.jpg"
+              alt="Scam Buster - Plateforme de Sensibilisation à la Cybersécurité"
+            />
+            <div class="project-overlay">
               <div class="tech-stack">
                 <span class="tech-item">FastAPI</span>
                 <span class="tech-item">Python</span>
@@ -446,7 +431,7 @@
             <div class="project-header">
               <div class="project-title">
                 <h3>Scam-buster</h3>
-                <span class="project-badge progress-badge">En Cours</span>
+                <span class="project-badge completed-badge">Terminé</span>
               </div>
               <div class="project-difficulty advanced">
                 <box-icon
@@ -457,11 +442,12 @@
               </div>
             </div>
             <p class="project-description">
-              Une plateforme web interactive de sensibilisation à la cybersécurité 
-              utilisant l'intelligence artificielle pour détecter/renseinger sur les arnaques cyber. 
-              Propose des quiz éducatifs, des défis communautaires et un système 
-              de détection en temps réel pour protéger les utilisateurs contre 
-              les menaces numériques.
+              Une plateforme web interactive de sensibilisation à la
+              cybersécurité utilisant l'intelligence artificielle pour
+              détecter/renseinger sur les arnaques cyber. Propose des quiz
+              éducatifs, des défis communautaires et un système de détection en
+              temps réel pour protéger les utilisateurs contre les menaces
+              numériques.
             </p>
             <div class="project-features">
               <div class="feature-item">
@@ -490,9 +476,21 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="project-btn progress">
-                <box-icon name="time" size="sm"></box-icon>
-                <span>En Développement</span>
+              <a
+                href="https://github.com/dpeterano/scam-buster"
+                target="_blank"
+                class="project-btn primary"
+              >
+                <box-icon name="github" type="logo" size="sm"></box-icon>
+                <span>Voir Code</span>
+              </a>
+              <a
+                href="https://scam-buster.onrender.com/"
+                target="_blank"
+                class="project-btn secondary"
+              >
+                <box-icon name="link-external" size="sm"></box-icon>
+                <span>Démo Live</span>
               </a>
             </div>
           </div>

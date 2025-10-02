@@ -17,61 +17,66 @@
 }
 
 @keyframes changeText {
-  0%, 15% {
+  0%,
+  15% {
     content: "a Developer";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   17% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  20%, 35% {
+
+  20%,
+  35% {
     content: "a Web Developer";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   37% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  40%, 55% {
+
+  40%,
+  55% {
     content: "a Software Developer";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   57% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  60%, 75% {
+
+  60%,
+  75% {
     content: "a Full Stack Developer";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   77% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  80%, 95% {
+
+  80%,
+  95% {
     content: "The one you need";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   97% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
+
   100% {
     content: "a Developer";
     opacity: 1;

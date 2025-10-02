@@ -17,61 +17,66 @@
 }
 
 @keyframes changeText {
-  0%, 15% {
+  0%,
+  15% {
     content: "un développeur";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   17% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  20%, 35% {
+
+  20%,
+  35% {
     content: "un développeur web junior";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   37% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  40%, 55% {
+
+  40%,
+  55% {
     content: "un étudiant en informatique";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   57% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  60%, 75% {
+
+  60%,
+  75% {
     content: "un apprenant constant";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   77% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
-  80%, 95% {
+
+  80%,
+  95% {
     content: "celui que vous cherchez";
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   97% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  
+
   100% {
     content: "un développeur";
     opacity: 1;
