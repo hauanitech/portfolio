@@ -1,8 +1,10 @@
 # Portfolio – Hauani
 
-Welcome to my personal.
+Welcome to my personal portfolio repo. 
+Made only using HTML, CSS and JS. 
+Feel free to reuse my code for personal use.
 
-🔗 Link : [www.hauani.tech](https://hauani.tech)
+🔗 Available at : [www.hauani.tech](https://hauani.tech)
 
 ## Technologies
 
@@ -13,6 +15,11 @@ Welcome to my personal.
 
 ## Local Installation
 
+Just copy-paste this command to clone the repo on your machine
+
 ```bash
 git clone https://github.com/hauanitech/portfolio.git
 ```
+
+This repo will constantly be updated until I move to a freshly made portfolio using
+a framework.
