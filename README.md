@@ -1,7 +1,7 @@
 # Portfolio – Hauani
 
-Welcome to my personal portfolio repo.
-Made only using HTML, CSS and JS.
+Welcome to my personal portfolio repo. 
+Made only using HTML, CSS and JS. 
 Feel free to reuse my code for personal use.
 
 🔗 Available at : [www.hauani.tech](https://hauani.tech)
